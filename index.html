@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div id="api-key-input">
+    <label for="api-key">OpenAI API Key:</label>
+    <input type="password" id="api-key">
+    <div>
+        <input type="checkbox" id="remember-key">
+        <label for="remember-key">Remember API Key for 24 hours</label>
+    </div>
+    <button id="submit-key">Submit</button>
+  </div>
+  <div id="main-chat">
+    <div id="prompt">Enter Question</div>
+    <input type="text" id="input-box">
+    <div id="gpt-response"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
