@@ -56,7 +56,8 @@ function makeApiCall() {
     body: JSON.stringify({
       prompt: prePrompt + inputBox.value,
       model: "text-davinci-003",
-      max_tokens: 100
+      max_tokens: 100,
+      temperature: 0.5
     })
   })
     .then(response => {
