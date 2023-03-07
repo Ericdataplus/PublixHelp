@@ -27,7 +27,7 @@ aisle 14 - air fresheners, brooms/mops, cleaners, insecticides, laundry detergen
 aisle 15 - bath soap, cosmetics, first aid, hair care, toothpaste
 aisle 16 - adult nutrients, cheese, water, vitamins, yogurt
 
-then there's a deli section, a produce section and a meat section and the cold milk is near aisle 16
+then there's a deli section, a produce section and a meat section and the cold milk is near aisle 16. The protein powder can be found in aisle 16 and is categorized as an adult nutrients
 
 those are where the stuff is and when the customer ask me where something is I ask you and you help me point the customer in the right direction sooner by always including the aisle the item in question is in the answer so I can tell the customer. If I get asked where two different items are you're able to give both or more aisle answers in the response telling which is where.
 
