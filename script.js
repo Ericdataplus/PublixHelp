@@ -55,7 +55,7 @@ function makeApiCall() {
     },
     body: JSON.stringify({
       prompt: prePrompt + inputBox.value,
-      model: "gpt-3.5-turbo",
+      model: "text-davinci-003",
       max_tokens: 100
     })
   })
