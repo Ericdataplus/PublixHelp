@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     - Deli section
     - Produce section
     - Meat section
-    - Cold milk near Aisle 16
+    - milk near Aisle 16
     - Protein powder in Aisle 16
     
     When you ask me about the location of one or more items, I will provide you with the corresponding aisle(s) so you can quickly guide the customer.
