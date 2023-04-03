@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>AI Chat Assistant</title>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,13 +26,6 @@
 
         <div id="main-chat" style="display:block">
             <form id="credentials-form">
-                <div class="input-group">
-                    <label for="password">Enter Password:</label>
-                    <input type="password" id="password">
-                    <input type="checkbox" id="show-password" onchange="togglePasswordVisibility()">
-                    <label for="show-password">Show Password</label>
-                </div>
-                <hr>
                 <div id="api-key-input" class="input-group">
                     <label for="api-key">OpenAI API Key:</label>
                     <input type="password" id="api-key">
@@ -55,17 +49,6 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script>
-      function togglePasswordVisibility() {
-        const passwordInput = document.getElementById('password');
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-        } else {
-          passwordInput.type = 'password';
-        }
-      }
-    </script>
 </body>
 
 </html>
