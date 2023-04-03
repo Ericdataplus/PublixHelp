@@ -2,20 +2,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // DOM elements
   const submitBtn = document.querySelector("#submit");
   const apiKeyInput = document.querySelector("#api-key");
+  const rememberKeyCheckbox = document.querySelector("#remember-key");
   const inputBox = document.querySelector("#input-box");
   const gptResponse = document.querySelector("#gpt-response");
   const loadingBar = document.querySelector("#loading-bar");
   const askQuestionBtn = document.querySelector("#ask-question");
-  const mainChat = document.querySelector("#main-chat");
 
   // Event listeners
   submitBtn.addEventListener("click", handleSubmit);
   inputBox.addEventListener("keydown", handleKeyDown);
   askQuestionBtn.addEventListener("click", askQuestion);
 
+  // Load API key from localStorage if it exists
+  if (localStorage.getItem("apiKey")) {
+    apiKeyInput.value = localStorage.getItem("apiKey");
+    rememberKeyCheckbox.checked = true;
+  }
+
   // Event handler functions
   function handleSubmit(event) {
     event.preventDefault();
+
+    // Save or remove API key from localStorage based on user preference
+    if (rememberKeyCheckbox.checked) {
+      localStorage.setItem("apiKey", apiKeyInput.value);
+    } else {
+      localStorage.removeItem("apiKey");
+    }
 
     // Enable input box and Ask Question button
     inputBox.disabled = false;
@@ -38,16 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingBar.style.display = "block";
     const apiKey = apiKeyInput.value;
 
-    // Add your preprompt information here
-    const preprompt = `
-    As an AI assistant, I'm here to help you find items in the Publix store based on the following layout:
+    // Add your truncated preprompt information here
+    const preprompt = `As an AI assistant, I'm here to help you find items in the Publix store based on the following layout:
 
     Aisle 1: canned fruits, juices, produce, sports drinks
-    Aisle 2: canned milk, cereals, coffee/tead, hot cereal, syrups
+    Aisle 2: international foods, kosher, pasta, rice/dry beans, sauces/mixes
     Aisle 3: breads, canned vegetables, canned meats, peanut butter/jelly, soups
     Aisle 4: baby food, baby needs, cookies, crackers, disposable diapers
     Aisle 5: cake mixes, condiments, oil/shortening, spices/extracts, sugar
-    Aisle 6: international foods, kosher, pasta, rice/dry beans, sauces/mixes
+    Aisle 6: canned milk, cereals, coffee/tea, hot cereal, syrups
     Aisle 7: air filters, batteries, charcoal, light bulbs, pet supplies
     Aisle 8: nuts, popcorn, potato chips, soft drinks, specialty drinks
     Aisle 9: candies, greeting cards, magazines/books, school supplies, toys
@@ -58,18 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
     Aisle 14: air fresheners, brooms/mops, cleaners, insecticides, laundry detergent
     Aisle 15: bath soap, cosmetics, first aid, hair care, toothpaste
     Aisle 16: adult nutrients, cheese, water, vitamins, yogurt
-
+    
     Other sections:
     - Deli section
     - Produce section
     - Meat section
     - Cold milk near Aisle 16
     - Protein powder in Aisle 16
-
+    
     When you ask me about the location of one or more items, I will provide you with the corresponding aisle(s) so you can quickly guide the customer.
-
-    Customer question:
-  `;
+    
+    Customer question:`
 
     fetch("https://api.openai.com/v1/completions", {
       method: "POST",
