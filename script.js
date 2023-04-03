@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const preprompt = `As an AI assistant, I'm here to help you find items in the Publix store based on the following layout:
 
     Aisle 1: canned fruits, juices, produce, sports drinks
-    Aisle 2: international foods, kosher, pasta, rice/dry beans, sauces/mixes
+    Aisle 2: canned milk, cereals, coffee/tea, hot cereal, syrups
     Aisle 3: breads, canned vegetables, canned meats, peanut butter/jelly, soups
     Aisle 4: baby food, baby needs, cookies, crackers, disposable diapers
     Aisle 5: cake mixes, condiments, oil/shortening, spices/extracts, sugar
-    Aisle 6: canned milk, cereals, coffee/tea, hot cereal, syrups
+    Aisle 6: international foods, kosher, pasta, rice/dry beans, sauces/mixes
     Aisle 7: air filters, batteries, charcoal, light bulbs, pet supplies
     Aisle 8: nuts, popcorn, potato chips, soft drinks, specialty drinks
     Aisle 9: candies, greeting cards, magazines/books, school supplies, toys
